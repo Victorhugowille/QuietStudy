@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação do App QuietStudy</title>
+    <style>
+        :root {
+            --bg-dark: #0F172A;
+            --surface: #1F2937;
+            --primary-accent: #10B981;
+            --secondary-accent: #2563EB;
+            --text-light: #E2E8F0;
+            --text-medium: #94A3B8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--surface);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-accent);
+        }
+
+        header h1 {
+            color: var(--primary-accent);
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--surface);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--primary-accent);
+            color: var(--surface);
+        }
+
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid var(--surface);
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-accent);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-accent);
+            padding-left: 1rem;
+        }
+        
+        h3 {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+        }
+
+        code {
+            background-color: var(--surface);
+            color: #f89580;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .card {
+            background-color: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--surface);
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Documentação do QuietStudy</h1>
+            <p>Seu refúgio para o estudo focado.</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#fluxo">Jornada do Usuário</a></li>
+            <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#arquitetura">Arquitetura</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <p>O <strong>QuietStudy</strong> é um aplicativo móvel desenvolvido para solucionar um desafio comum entre estudantes: a dificuldade de encontrar um ambiente silencioso e propício para a concentração. Este documento detalha a visão do produto, suas funcionalidades e a arquitetura técnica implementada.</p>
+            <h3>O Problema</h3>
+            <p>Em um mundo repleto de distrações, a busca por um local de estudo eficaz é uma tarefa constante. Ambientes domésticos podem ser ruidosos, enquanto espaços públicos como cafés e praças são imprevisíveis. Essa busca consome tempo e energia mental, impactando diretamente a produtividade e o bem-estar do estudante.</p>
+            <h3>A Proposta de Valor</h3>
+            <p>QuietStudy atua como um "gerenciador de santuários de estudo". Ele oferece uma ferramenta simples e pessoal para que o usuário possa mapear, registrar e gerenciar sua própria lista de locais de confiança, garantindo que ele sempre tenha um refúgio para se concentrar.</p>
+        </section>
+
+        <section id="fluxo">
+            <h2>Jornada do Usuário</h2>
+            <p>A experiência do usuário foi projetada para ser clara, transparente e focada em privacidade desde o primeiro momento.</p>
+            <div class="card">
+                <h3>1. Onboarding e Consentimento</h3>
+                <p>Ao abrir o app pela primeira vez, o usuário é guiado por um fluxo de onboarding que apresenta os benefícios do QuietStudy. Em seguida, é direcionado para uma tela unificada onde deve ler a <strong>Política de Privacidade</strong> e os <strong>Termos de Uso</strong>. O avanço no aplicativo só é permitido após a leitura completa e o aceite, garantindo conformidade e transparência.</p>
+            </div>
+            <div class="card">
+                <h3>2. Tela Principal (Home)</h3>
+                <p>Após o consentimento, o usuário chega à tela principal, onde a funcionalidade central do app é apresentada. A interface é minimalista, incentivando a ação principal: adicionar um novo local de estudo ou analisar o ambiente atual.</p>
+            </div>
+            <div class="card">
+                <h3>3. Revogação de Consentimento</h3>
+                <p>A qualquer momento, o usuário pode acessar as configurações (ícone na AppBar) e revogar seu consentimento. Essa ação apaga os dados de aceite e redireciona o usuário para o fluxo de onboarding na próxima vez que o app for aberto, respeitando seu direito à privacidade.</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Funcionalidades Detalhadas</h2>
+            <p>O QuietStudy combina simplicidade manual com um poderoso recurso de análise inteligente.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Cadastro Manual</h3>
+                    <p>O usuário pode adicionar manualmente um local de estudo, fornecendo um nome descritivo (ex: "Biblioteca Municipal, 2º andar"). Esses dados são armazenados exclusivamente no dispositivo.</p>
+                </div>
+                <div class="card">
+                    <h3>Privacidade por Design</h3>
+                    <p>O aplicativo não exige contas de usuário, login ou rastreamento em segundo plano. A localização só é acessada quando o usuário ativamente solicita a análise do ambiente.</p>
+                </div>
+                <div class="card">
+                    <h3>Análise Inteligente</h3>
+                    <p>Utilizando o GPS, o app identifica a localização atual e, através da <strong>Google Places API</strong>, determina o tipo de estabelecimento. Uma lógica interna então classifica o local como "bom" (silencioso) ou "ruim" (barulhento) para estudos.</p>
+                </div>
+                <div class="card">
+                    <h3>Mapa Estático</h3>
+                    <p>Para fornecer um contexto visual, o resultado da análise inclui uma imagem de mapa gerada pela <strong>Google Maps Static API</strong>, mostrando a área que foi avaliada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="arquitetura">
+            <h2>Arquitetura e Tecnologias</h2>
+            <p>O QuietStudy foi desenvolvido com o framework Flutter, garantindo uma base de código única e compilável para múltiplas plataformas. A arquitetura segue o princípio de separação de responsabilidades.</p>
+            <h3>Tecnologias Utilizadas</h3>
+            <ul>
+                <li><strong>Framework:</strong> <code>Flutter</code></li>
+                <li><strong>Gerenciamento de Estado:</strong> <code>provider</code></li>
+                <li><strong>Persistência Local:</strong> <code>shared_preferences</code> (para o estado de consentimento)</li>
+                <li><strong>Geolocalização:</strong> <code>geolocator</code> (para acesso ao GPS)</li>
+                <li><strong>Comunicação com APIs:</strong> <code>http</code> (para consumir as APIs do Google)</li>
+                <li><strong>Renderização de Políticas:</strong> <code>flutter_markdown</code></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito por Victor Hugo Wille</p>
+    </footer>
+
+</body>
+</html>
