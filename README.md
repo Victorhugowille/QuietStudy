@@ -2,9 +2,7 @@
 
 *Um aplicativo para encontrar e gerenciar locais de estudo silenciosos, com foco total em privacidade.*
 
-![Capa do App QuietStudy](https://i.imgur.com/your-image-url.png) 
-*(Dica: Tire um screenshot bonito do seu app, suba no site [Imgur](https://imgur.com/upload) e cole o link aqui)*
-
+![Capa do App QuietStudy](https://imgur.com/a/mi4qCek) 
 ## 🚀 Sobre o Projeto
 
 O **QuietStudy** foi desenvolvido para resolver um desafio comum entre estudantes: a dificuldade de encontrar um ambiente tranquilo e propício para a concentração. Este aplicativo atua como um "gerenciador de refúgios de estudo", permitindo que o usuário mapeie e analise locais de forma pessoal e segura.
